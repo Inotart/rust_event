@@ -2,6 +2,12 @@
 name = "event"
 version = "0.1.0"
 edition = "2024"
+authors = ["Inotart"]
+description = "基于tokio制作的一个轻量化异步事件库"
+license = "MIT"
+repository = "https://github.com/Inotart/rust_event.git"
+homepage = "https://github.com/Inotart/rust_event.git"
+readme = "README.md"
 
 [dependencies]
 futures = "0.3.31"
