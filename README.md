@@ -21,8 +21,6 @@ pub async fn main() -> Result<(), anyhow::Error> {
     tokio::time::sleep(std::time::Duration::from_secs(1)).await; // Wait for one second to avoid exiting too early.
     Ok(())
 }
-
-
 ```
 ```rust
 rust_event::event!(
