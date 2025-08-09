@@ -1,4 +1,4 @@
-use event::{event, event_register_async, AsyncEventBus};
+use rust_event::{event, event_register_async, AsyncEventBus};
 
 // const bus = Event::AsyncEventBus
 event!(

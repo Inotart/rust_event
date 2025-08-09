@@ -1,4 +1,4 @@
-use event::{event_emit_global, event_register_global_async, Event};
+use rust_event::{event_emit_global, event_register_global_async, Event};
 
 
 // 定义事件

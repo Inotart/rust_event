@@ -3,7 +3,7 @@ Rust 轻量化异步事件库
 > 作者: InotArt
 
 这是一个基于tokio制作的一个轻量化异步事件库,安装方式：
-> cargo add event
+> cargo add rust_event
 ## 使用方法:
 ```rust
 event::event!(
