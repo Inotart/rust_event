@@ -17,11 +17,14 @@ impl Event for SystemAlertEvent {
     type Data = String;
 }
 
+
+
+rust_event::event_global_async!(GlobalMessageEvent, handle_global_message, (sender, message));
 // 事件处理器
 pub async fn handle_global_message(sender: String, message: String) {
     println!("[Global Message] From {}: {}", sender, message);
 }
-
+rust_event::event_global_async!(GlobalCounterEvent, handle_global_counter, (count));
 pub async fn handle_global_counter(count: u32) {
     println!("[Global Counter] Current count: {}", count);
     if count % 10 == 0 {
@@ -37,10 +40,8 @@ pub async fn handle_system_alert(message: String) {
 #[tokio::test]
 pub async fn test_global_bus() -> Result<(), anyhow::Error> {
     println!("Starting global event bus test...");
-    
     // 注册事件处理器
-    event_register_global_async!(GlobalMessageEvent, handle_global_message, (sender, message));
-    event_register_global_async!(GlobalCounterEvent, handle_global_counter, (count));
+    // event_register_global_async!(GlobalMessageEvent, handle_global_message, (sender, message));
     event_register_global_async!(SystemAlertEvent, handle_system_alert, (message));
     
     println!("Registered global event handlers");
